@@ -8,6 +8,8 @@ import { swap } from './swap'
  * It is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the
  * array and partitioning the other elements into two sub-arrays, according to whether they
  * are less or greater than the pivot. The sub-arrays are sorted recursively.
+ *
+ * @see https://en.wikipedia.org/wiki/Quicksort
  */
 export class QuickSort implements Sort {
     public sort<Type>(data: Array<Type>): Array<Type> {
