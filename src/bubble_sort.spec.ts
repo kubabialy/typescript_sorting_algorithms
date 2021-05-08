@@ -1,5 +1,6 @@
-import { BubbleSort } from './bubble_sort'
+import { BubbleSort, FunctionalBubbleSort } from './bubble_sort'
 import * as expect from 'expect'
+import { comparator } from './comparator'
 
 describe('src/bubble_sort.ts', () => {
     describe('BubbleSort.sort()', () => {
@@ -22,6 +23,28 @@ describe('src/bubble_sort.ts', () => {
             const bubbleSort = new BubbleSort()
             let result: Array<Array<number>> = bubbleSort.sort(input)
             expect(result).toEqual([[1], [1, 2, 3], [1, 3, 6, 4]])
+        })
+    })
+
+    describe('FunctionalBubbleSort', () => {
+        describe('()', () => {
+            it('should sort numbers in ascending order', () => {
+                let input: Array<number> = [1, 4, 5, 2, 6]
+                let result: Array<number> = FunctionalBubbleSort(
+                    input,
+                    comparator
+                )
+                expect(result).toEqual([1, 2, 4, 5, 6])
+            })
+
+            it('should sort words in ascending order', () => {
+                let input: Array<string> = ['z', 'c', 'foo', 'bar', 'baz']
+                let result: Array<string> = FunctionalBubbleSort(
+                    input,
+                    comparator
+                )
+                expect(result).toEqual(['bar', 'baz', 'c', 'foo', 'z'])
+            })
         })
     })
 })
