@@ -24,10 +24,7 @@ export class BubbleSort implements Sort {
         while (swapped) {
             swapped = false
 
-            for (let i = 0; i < data.length; i++) {
-                /** Preventing out of bound error */
-                if (i === data.length - 1) continue
-
+            for (let i = 0; i < data.length - 1; i++) {
                 /**
                  * This is the whole logic of this algorithm and the reason why its so simple.
                  * What happens here is that current index `i` is compared to the next index
