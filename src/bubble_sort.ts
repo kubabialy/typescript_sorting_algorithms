@@ -45,7 +45,7 @@ export class BubbleSort implements Sort {
     }
 }
 
-export const FunctionalBubbleSort: FunctionalSort = <type>(
+export const functionalBubbleSort: FunctionalSort = <type>(
     values: type[],
     comparator?: (a: type, b: type) => ComparisonResult
 ): type[] => {
@@ -53,11 +53,6 @@ export const FunctionalBubbleSort: FunctionalSort = <type>(
     while (swapped) {
         swapped = false
         for (let i = 0; i < values.length - 1; i++) {
-            /**
-             * This is the whole logic of this algorithm and the reason why its so simple.
-             * What happens here is that current index `i` is compared to the next index
-             * and if the value of the current one is higher than the next one they change places.
-             */
             if (comparator(values[i], values[i + 1]) === ComparisonResult.LT) {
                 swap(values, i, i + 1)
                 swapped = true
