@@ -1,5 +1,9 @@
-import Sort from './sort'
+import Sort, { FunctionalSort } from './sort'
 import { swap } from './swap'
+import {
+    comparator as default_comparator,
+    ComparisonResult,
+} from './comparator'
 
 /**
  * Bubble sort (sometimes referred to as sinking sort) is a simple sorting algorithm
@@ -39,4 +43,21 @@ export class BubbleSort implements Sort {
 
         return data
     }
+}
+
+export const functionalBubbleSort: FunctionalSort = <type>(
+    values: type[],
+    comparator?: (a: type, b: type) => ComparisonResult
+): type[] => {
+    let swapped = true
+    while (swapped) {
+        swapped = false
+        for (let i = 0; i < values.length - 1; i++) {
+            if (comparator(values[i], values[i + 1]) === ComparisonResult.LT) {
+                swap(values, i, i + 1)
+                swapped = true
+            }
+        }
+    }
+    return values
 }
