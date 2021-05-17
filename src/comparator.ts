@@ -1,14 +1,13 @@
-export function comparator<type extends string | number>(
+export function comparator<type>(
     a: type,
     b: type
 ): ComparisonResult {
-    if (a > b) {
-        return ComparisonResult.LT
-    } else if (a < b) {
-        return ComparisonResult.RT
-    }
+    if (a === b)
+        return ComparisonResult.EQ
 
-    return ComparisonResult.EQ
+    return a > b
+        ? ComparisonResult.LT
+        : ComparisonResult.RT
 }
 
 export enum ComparisonResult {

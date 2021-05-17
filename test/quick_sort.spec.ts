@@ -1,36 +1,37 @@
-import { BubbleSort, functionalBubbleSort } from './bubble_sort'
-import * as expect from 'expect'
-import { comparator } from './comparator'
+import {functionalQuickSort, QuickSort} from '../src/quick_sort'
+import expect from 'expect';
+import {comparator} from "../src/comparator";
+import {functionalBubbleSort} from "../src/bubble_sort";
 
-describe('src/bubble_sort.ts', () => {
-    describe('BubbleSort.sort()', () => {
-        it('should sort numbers in asceding order using bubble sort algorithm', () => {
+describe('src/quick_sort.ts', () => {
+    describe('QuickSort.sort()', () => {
+        it('should sort numbers in asceding order using quick_sort algorithm', () => {
             let input: Array<number> = [1, 4, 5, 2, 6]
-            const bubbleSort = new BubbleSort()
+            const bubbleSort = new QuickSort()
             let result: Array<number> = bubbleSort.sort(input)
             expect(result).toEqual([1, 2, 4, 5, 6])
         })
 
-        it('should sort letters in asceding order using bubble sort algorithm', () => {
+        it('should sort letters in asceding order using quick_sort algorithm', () => {
             let input: Array<string> = ['c', 'b', 'd', 'a', 'e']
-            const bubbleSort = new BubbleSort()
+            const bubbleSort = new QuickSort()
             let result: Array<string> = bubbleSort.sort(input)
             expect(result).toEqual(['a', 'b', 'c', 'd', 'e'])
         })
 
         it('should sort arrays in asceding order', () => {
             let input: Array<Array<number>> = [[1, 2, 3], [1, 3, 6, 4], [1]]
-            const bubbleSort = new BubbleSort()
+            const bubbleSort = new QuickSort()
             let result: Array<Array<number>> = bubbleSort.sort(input)
             expect(result).toEqual([[1], [1, 2, 3], [1, 3, 6, 4]])
         })
     })
 
-    describe('functionalBubbleSort', () => {
+    describe('functionalQuickSort', () => {
         describe('()', () => {
             it('should sort numbers in ascending order', () => {
                 let input: Array<number> = [1, 4, 5, 2, 6]
-                let result: Array<number> = functionalBubbleSort(
+                let result: Array<number> = functionalQuickSort(
                     input,
                     comparator
                 )
