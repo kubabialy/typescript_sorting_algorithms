@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "scripts": {
     "test": "ts-mocha -p tsconfig.json src/**/*.spec.ts"
   },
