@@ -1,7 +1,7 @@
-import {functionalQuickSort, QuickSort} from '../src/quick_sort'
-import expect from 'expect';
-import {comparator} from "../src/comparator";
-import {functionalBubbleSort} from "../src/bubble_sort";
+import { functionalQuickSort, QuickSort } from '../src/quick_sort'
+import expect from 'expect'
+import { comparator } from '../src/comparator'
+import { functionalBubbleSort } from '../src/bubble_sort'
 
 describe('src/quick_sort.ts', () => {
     describe('QuickSort.sort()', () => {
