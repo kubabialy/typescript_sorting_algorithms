@@ -7,9 +7,7 @@ export function swap<Type>(
     a: number,
     b: number
 ): Array<Type> {
-    let holder = arr[a]
-    arr[a] = arr[b]
-    arr[b] = holder
+    [arr[a], arr[b]] = [arr[b], arr[a]]
 
     return arr
 }

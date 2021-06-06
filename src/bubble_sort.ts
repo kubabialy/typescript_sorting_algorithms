@@ -1,9 +1,6 @@
-import Sort, { FunctionalSort } from './sort'
-import { swap } from './swap'
-import {
-    comparator as default_comparator,
-    ComparisonResult,
-} from './comparator'
+import Sort, {FunctionalSort} from './sort'
+import {swap} from './swap'
+import {comparator as cmp, ComparisonResult} from './comparator'
 
 /**
  * Bubble sort (sometimes referred to as sinking sort) is a simple sorting algorithm
@@ -23,7 +20,7 @@ import {
  * @see https://en.wikipedia.org/wiki/Bubble_sort
  */
 export class BubbleSort implements Sort {
-    public sort<Type>(data: Type[]): Type[] {
+    public sort<Type>(data: Type[], comparator: (a: Type, b: Type) => ComparisonResult = cmp): Type[] {
         let swapped = true
         while (swapped) {
             swapped = false
@@ -34,7 +31,7 @@ export class BubbleSort implements Sort {
                  * What happens here is that current index `i` is compared to the next index
                  * and if the value of the current one is higher than the next one they change places.
                  */
-                if (data[i] > data[i + 1]) {
+                if (comparator(data[i], data[i + 1]) === ComparisonResult.LT) {
                     swap(data, i, i + 1)
                     swapped = true
                 }
@@ -47,7 +44,7 @@ export class BubbleSort implements Sort {
 
 export const functionalBubbleSort: FunctionalSort = <type>(
     values: type[],
-    comparator?: (a: type, b: type) => ComparisonResult
+    comparator: (a: type, b: type) => ComparisonResult = cmp
 ): type[] => {
     let swapped = true
     while (swapped) {

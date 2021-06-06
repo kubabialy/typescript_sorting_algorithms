@@ -4,7 +4,29 @@ This repository contains implementations of some sorting algorithms written in T
 
 It might not be a perfect implementation, but it should at least give you an idea of how a certain algorithm works.
 
+You are free to use this as a package, as this repository will have more algorithms at some point.
+
 Credits for a documentation should go to [Wikipedia](https://en.wikipedia.org)
+
+## How to use
+
+Say use want to use sort implemented in a form of a class:
+
+```typescript
+import { BubbleSort } from '../src/bubble_sort'
+
+let foo = ['some', 'elements', ...]
+
+foo = BubbleSort.sort(foo)
+```
+
+For a more functional way:
+
+```typescript
+import { functionalQuickSort } from '../src/quick_sort'
+let someArray: Array<number> = [1, 4, 5, 2, 6]
+someArray = functionalQuickSort(input, comparator)
+```
 
 ## Notes
 

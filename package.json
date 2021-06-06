@@ -1,16 +1,21 @@
 {
   "name": "sorting_algorithms",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Small package containing various ways to sort stuff",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "engineStrict": true,
   "engines": {
     "node": ">=10.0.0"
   },
   "scripts": {
-    "test": "ts-mocha -p tsconfig.json src/**/*.spec.ts"
+    "test": "ts-mocha -p tsconfig.json test/**/*.spec.ts",
+    "prepublish": "tsc"
   },
-  "keywords": ["TypeScript", "Algorithms"],
+  "keywords": [
+    "TypeScript",
+    "Algorithms"
+  ],
   "author": "Kuba Biały",
   "license": "MIT",
   "devDependencies": {

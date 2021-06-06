@@ -1,5 +1,5 @@
-import * as expect from 'expect'
-import { swap } from './swap'
+import expect from 'expect'
+import { swap } from '../src/swap'
 
 describe('src/swap.ts', () => {
     describe('swap()', () => {
